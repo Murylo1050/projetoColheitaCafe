@@ -29,20 +29,21 @@
             android:id="@+id/textView2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Quantidade de sacos" />
+            android:text="Quantidade de sacos:"
+            android:textSize="24sp" />
 
         <EditText
             android:id="@+id/editTextTextPersonName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:inputType="textPersonName"
-            android:text="Name" />
+            android:inputType="number|textPersonName" />
 
         <Button
             android:id="@+id/btFinalizarColheita"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:onClick="AdicionaNovosSacos"
             android:text="ok" />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
