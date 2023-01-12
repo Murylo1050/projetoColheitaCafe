@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:onClick="onClickcadastraGrupo"
     tools:context=".CadastroGrupo">
 
     <LinearLayout
@@ -19,15 +20,17 @@
             android:id="@+id/textView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Nome do grupo" />
+            android:text="Nome do grupo:"
+            android:textSize="24sp" />
 
         <EditText
-            android:id="@+id/editTextTextPersonName2"
+            android:id="@+id/nomeGrupoCadastragrupo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="textPersonName"
-            android:text="Name" />
+            android:minHeight="48dp"
+            android:onClick="onClickcadastraGrupo" />
 
         <Button
             android:id="@+id/btFinalizarCadastroGrupo"
