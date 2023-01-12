@@ -2,30 +2,37 @@ package com.example.projetoorientacaoobjetos;
 
 import static com.example.projetoorientacaoobjetos.CadastroGrupo.getGrupos;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
-import android.widget.ListView;
+import android.widget.Spinner;
+import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.projetoorientacaoobjetos.OBJETOS.Grupo;
 
-import java.util.List;
-
 public class CadastroPessoa extends AppCompatActivity {
-    ListView lista;
+    Spinner lista;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cadastro_pessoa2);
-        lista = (ListView)findViewById(R.id.listViewCadastraPessoa);
+        lista = (Spinner) findViewById(R.id.spinnerCadastraPessoa);
 
-        ArrayAdapter<Grupo> arrayAdapter = new ArrayAdapter<Grupo>(this, android.R.layout.simple_list_item_1,getGrupos());
-
+        ArrayAdapter<Grupo> arrayAdapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, getGrupos());
+        arrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         lista.setAdapter(arrayAdapter);
+
+        lista.setOnItemClickListener((adapterView, view, position, id) -> {
+            String value = adapterView.getItemAtPosition(position).toString();
+            Toast.makeText(CadastroPessoa.this,value,Toast.LENGTH_SHORT).show();
+        });
+
+
     }
+
 
     public void cadastraPessoa(View view) {
 

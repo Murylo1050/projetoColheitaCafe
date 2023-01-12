@@ -1,24 +1,23 @@
 package com.example.projetoorientacaoobjetos;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
-import android.widget.TextView;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.projetoorientacaoobjetos.OBJETOS.Grupo;
 
 import java.util.ArrayList;
 
 public class CadastroGrupo extends AppCompatActivity {
-    private static ArrayList<Grupo> grupos = new ArrayList<Grupo>();
+    private static ArrayList<Grupo> grupos = new ArrayList<>();
 
     public static ArrayList<Grupo> getGrupos() {
         return grupos;
     }
 
-    private TextView nomeGrupo;
+    private EditText  nomeGrupo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,5 +30,6 @@ public class CadastroGrupo extends AppCompatActivity {
 
     public void onClickcadastraGrupo(View view) {
         grupos.add(new Grupo(nomeGrupo.getText().toString()));
+        nomeGrupo.setText("");
     }
 }
