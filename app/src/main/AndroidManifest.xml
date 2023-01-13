@@ -13,6 +13,13 @@
         android:theme="@style/Theme.ProjetoOrientacaoObjetos"
         tools:targetApi="31">
         <activity
+            android:name=".CadastroPessoaReal"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
             android:name=".CadastroPessoa"
             android:exported="false">
             <meta-data
