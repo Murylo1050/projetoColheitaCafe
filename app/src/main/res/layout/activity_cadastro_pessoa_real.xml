@@ -15,9 +15,18 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <ListView
+        <Spinner
+            android:id="@+id/spinnerDoCadastraPessoa"
             android:layout_width="match_parent"
-            android:layout_height="150px" />
+            android:layout_height="wrap_content"
+            android:minHeight="48dp" />
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Nome:"
+            android:textSize="24sp" />
 
         <EditText
             android:id="@+id/editTextTextPersonName2"
@@ -25,7 +34,7 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="textPersonName"
-            android:text="Name" />
+            android:minHeight="48dp" />
 
         <Button
             android:id="@+id/button"

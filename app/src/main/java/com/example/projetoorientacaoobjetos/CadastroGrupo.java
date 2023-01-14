@@ -13,6 +13,9 @@ import java.util.ArrayList;
 public class CadastroGrupo extends AppCompatActivity {
     private static ArrayList<Grupo> grupos = new ArrayList<>();
 
+
+
+
     public static ArrayList<Grupo> getGrupos() {
         return grupos;
     }
@@ -25,10 +28,13 @@ public class CadastroGrupo extends AppCompatActivity {
         setContentView(R.layout.activity_cadastro_grupo);
 
         nomeGrupo = (EditText)findViewById(R.id.nomeGrupoCadastragrupo);
+
     }
 
 
-    public void onClickcadastraGrupo(View view) {
+
+
+    public void cadastraGrupo(View view) {
         grupos.add(new Grupo(nomeGrupo.getText().toString()));
         nomeGrupo.setText("");
     }
