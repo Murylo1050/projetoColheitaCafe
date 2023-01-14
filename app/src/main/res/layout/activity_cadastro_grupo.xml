@@ -4,39 +4,50 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/background"
     android:onClick="cadastrarGrupo"
     tools:context=".CadastroGrupo">
 
-    <LinearLayout
-        android:layout_width="356dp"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
+    <View
+        android:id="@+id/view2"
+        style="@style/ContainerComponents"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.498" />
+
+    <LinearLayout
+        android:layout_width="350dp"
+        android:layout_height="150dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/view2"
+        app:layout_constraintStart_toStartOf="@+id/view2"
         app:layout_constraintTop_toTopOf="parent">
 
         <TextView
             android:id="@+id/textView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_width="296dp"
+            android:layout_height="35dp"
             android:text="Nome do grupo:"
-            android:textSize="24sp" />
+            android:textSize="20sp" />
 
         <EditText
             android:id="@+id/nomeGrupoCadastragrupo"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_width="350dp"
+            android:layout_height="40dp"
             android:ems="10"
             android:inputType="textPersonName"
-            android:minHeight="48dp"
-            />
+            android:minHeight="50dp" />
 
-        <Button
+        <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btFinalizarCadastroGrupo"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            style="@style/Button"
             android:onClick="cadastraGrupo"
-            android:text="Cadastrar grupo" />
+            android:text="Cadastrar grupo"
+            android:textColor="@color/white" />
     </LinearLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

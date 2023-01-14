@@ -5,11 +5,22 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/background"
     tools:context=".MainActivity">
 
+    <View
+        android:id="@+id/view2"
+        style="@style/ContainerComponents"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.4"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.498" />
+
     <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="387dp"
+        android:layout_height="260dp"
         android:gravity="center_horizontal|center_vertical"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -17,24 +28,27 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <Button
+        <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btCadastro"
-            android:layout_width="800px"
-            android:layout_height="90dp"
+            style="@style/Button"
             android:onClick="moveToCadastro"
-            android:text="cadastro" />
+            android:text="cadastro"
+            android:textColor="@color/white"
+            />
 
-        <Button
+        <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btColheita"
-            android:layout_width="match_parent"
-            android:layout_height="93dp"
+            style="@style/Button"
             android:onClick="moveToColheita"
-            android:text="Colheita" />
+            android:text="Colheita"
+            android:textColor="@color/white"
+            />
 
-        <Button
+        <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btFinalizar"
-            android:layout_width="match_parent"
-            android:layout_height="93dp"
-            android:text="Finalizar" />
+            style="@style/Button"
+            android:text="Finalizar"
+            android:textColor="@color/white"
+            />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

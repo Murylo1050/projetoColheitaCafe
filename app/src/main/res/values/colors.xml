@@ -7,4 +7,10 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="bege">#D4C6B0</color>
+    <color name="marrom_claro">#B38A69</color>
+    <color name="cinza">#8B6C5E</color>
+    <color name="marrom">#A15F22</color>
+    <color name="vermelho">#6F3132</color>
+    <color name="marrom_escuro">#4E2F2E</color>
 </resources>
