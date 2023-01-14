@@ -25,7 +25,7 @@ public class Colheita extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_colheita);
-        lista = (Spinner) findViewById(R.id.spinnerColheita);
+        lista = (Spinner) findViewById(R.id.spinnerColheitaGrupo);
 
         grupos.addAll(getGrupos());
 

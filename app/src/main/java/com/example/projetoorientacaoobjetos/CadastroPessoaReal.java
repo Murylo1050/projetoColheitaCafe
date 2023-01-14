@@ -12,11 +12,14 @@ import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.example.projetoorientacaoobjetos.OBJETOS.Grupo;
+import com.example.projetoorientacaoobjetos.OBJETOS.Pessoa;
 
 import java.util.ArrayList;
 
 public class CadastroPessoaReal extends AppCompatActivity {
     private Spinner lista;
+    private ArrayList<Pessoa> pessoas = new ArrayList<>();
+
     private ArrayList<String> equipe = new ArrayList<>();
     private ArrayList<Grupo> grupos = new ArrayList<>();
 
@@ -53,13 +56,16 @@ public class CadastroPessoaReal extends AppCompatActivity {
             public void onItemSelected(AdapterView<?> adapterView, View view, int position, long id) {
                 String value=adapterView.getItemAtPosition(position).toString();
                 Toast.makeText( CadastroPessoaReal.this, equipes[position],Toast.LENGTH_SHORT).show();
+
             }
 
             @Override
             public void onNothingSelected(AdapterView<?> adapterView) {
 
             }
+
         });
+
 
 
     }
