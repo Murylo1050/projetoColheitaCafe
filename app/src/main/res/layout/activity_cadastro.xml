@@ -16,17 +16,19 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <Button
+            android:id="@+id/btCadastroPessoaReal"
+            android:layout_width="match_parent"
+            android:layout_height="93dp"
+            android:onClick="moveToCadastroPessoa"
+            android:text="Cadastrar pessoa" />
+
+        <Button
             android:id="@+id/btCadastroGrupo"
             android:layout_width="match_parent"
             android:layout_height="93dp"
             android:onClick="moveToCadastroGrupo"
             android:text="Cadastrar grupo" />
 
-        <Button
-            android:id="@+id/btCadastroPessoa"
-            android:layout_width="match_parent"
-            android:layout_height="93dp"
-            android:onClick="moveToCadastroPessoa"
-            android:text="Cadastrar pessoa" />
     </LinearLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

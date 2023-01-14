@@ -15,34 +15,32 @@ import com.example.projetoorientacaoobjetos.OBJETOS.Grupo;
 
 import java.util.ArrayList;
 
-public class Colheita extends AppCompatActivity {
+public class CadastroPessoaReal extends AppCompatActivity {
     private Spinner lista;
     private ArrayList<String> equipe = new ArrayList<>();
     private ArrayList<Grupo> grupos = new ArrayList<>();
 
 
+
+
+
+
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_colheita);
-        lista = (Spinner) findViewById(R.id.spinnerColheita);
+        setContentView(R.layout.activity_cadastro_pessoa_real);
+        lista = (Spinner) findViewById(R.id.spinnerDoCadastraPessoa);
 
         grupos.addAll(getGrupos());
-
-        System.out.println("Ola mundo");
-        //System.out.println(getGrupos().get(1).getNome());
-
-
         for (Grupo grupo: grupos) {
-            //System.out.println(grupo.getNome());
             equipe.add(grupo.getNome());
         }
 
         String[] equipes = equipe.toArray(new String[0]);
 
-        for (String sexo: equipes) {
-            System.out.println(sexo);
-        }
+       
 
 
 
@@ -54,7 +52,7 @@ public class Colheita extends AppCompatActivity {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int position, long id) {
                 String value=adapterView.getItemAtPosition(position).toString();
-                Toast.makeText( Colheita.this, equipes[position],Toast.LENGTH_SHORT).show();
+                Toast.makeText( CadastroPessoaReal.this, equipes[position],Toast.LENGTH_SHORT).show();
             }
 
             @Override
@@ -62,8 +60,12 @@ public class Colheita extends AppCompatActivity {
 
             }
         });
+
+
     }
 
-    public void AdicionaNovosSacos(View view) {
+
+    public void cadastraPessoa(View view) {
+
     }
 }

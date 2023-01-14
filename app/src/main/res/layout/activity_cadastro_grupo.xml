@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:onClick="onClickcadastraGrupo"
+    android:onClick="cadastrarGrupo"
     tools:context=".CadastroGrupo">
 
     <LinearLayout
@@ -30,12 +30,13 @@
             android:ems="10"
             android:inputType="textPersonName"
             android:minHeight="48dp"
-            android:onClick="onClickcadastraGrupo" />
+            />
 
         <Button
             android:id="@+id/btFinalizarCadastroGrupo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:onClick="cadastraGrupo"
             android:text="Cadastrar grupo" />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

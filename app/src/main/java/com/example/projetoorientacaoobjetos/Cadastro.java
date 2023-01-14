@@ -15,12 +15,12 @@ public class Cadastro extends AppCompatActivity {
     }
 
     public void moveToCadastroGrupo(View view) {
-        Intent in = new Intent(this,CadastroGrupo.class);
+        Intent in = new Intent(getApplicationContext(),CadastroGrupo.class);
         startActivity(in);
     }
 
     public void moveToCadastroPessoa(View view) {
-        Intent in = new Intent(this,CadastroPessoa.class);
-        startActivity(in);
+        Intent inte = new Intent(getApplicationContext(),CadastroPessoaReal.class);
+        startActivity(inte);
     }
 }
