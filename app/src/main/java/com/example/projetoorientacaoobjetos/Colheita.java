@@ -3,6 +3,7 @@ package com.example.projetoorientacaoobjetos;
 import static com.example.projetoorientacaoobjetos.CadastroGrupo.getGrupos;
 import static com.example.projetoorientacaoobjetos.CadastroPessoaReal.getPessoas;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
@@ -20,7 +21,8 @@ import java.util.ArrayList;
 
 public class Colheita extends AppCompatActivity {
     private Spinner listaGrupo;
-    private EditText idPessoa;
+    private EditText nomePessoa;
+    private EditText qtdSacos;
     String[] equipes;
 
     private ArrayList<String> equipe = new ArrayList<>();
@@ -32,7 +34,8 @@ public class Colheita extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_colheita);
         listaGrupo = (Spinner) findViewById(R.id.spinnerColheitaGrupo);
-        idPessoa = (EditText)findViewById(R.id.et_nome_pessoa_colheita);
+        nomePessoa = (EditText)findViewById(R.id.et_nome_pessoa_colheita);
+        qtdSacos = (EditText)findViewById(R.id.et_qtd_sacos);
 
 
         grupos.addAll(getGrupos());
@@ -59,10 +62,36 @@ public class Colheita extends AppCompatActivity {
             }
         });
 
-
+        nomePessoa.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+            nomePessoa.setText("");
+            }
+        });
     }
     private int cont=0;
     public void AdicionaNovosSacos(View view) {
-        while(!(grupos.get(listaGrupo.getSelectedItemPosition()).getPessoasDaEquipe().get(cont).getId() == Integer.parseInt(idPessoa.getText());
+        try {
+
+
+            while (!(grupos.get(listaGrupo.getSelectedItemPosition()).getPessoasDaEquipe().get(cont).getNomePessoa().equalsIgnoreCase(nomePessoa.getText().toString()))) {
+                cont++;
+            }
+
+            grupos.get(listaGrupo.getSelectedItemPosition()).getPessoasDaEquipe().get(cont).addSacos(Integer.parseInt(qtdSacos.getText().toString()));
+            Toast.makeText(getApplicationContext(),"Sacos coletados com sucesso!",Toast.LENGTH_SHORT);
+            nomePessoa.setText("");
+            qtdSacos.setText("");
+        }catch (Exception e){
+            AlertDialog.Builder alert = new AlertDialog.Builder(getApplicationContext());
+            alert.setTitle("Atenção !");
+            alert.setMessage("A pessoa digitada não pertence a esse grupo ou não existe!");
+
+        }
+
+
     }
+
+
+
 }

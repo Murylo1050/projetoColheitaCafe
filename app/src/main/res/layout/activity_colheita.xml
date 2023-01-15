@@ -43,17 +43,13 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:ems="10"
-                android:inputType="number"
+                android:inputType="text"
                 android:minHeight="48dp"
-                android:text="ID" />
+                android:onClick="editTextOnClick"
+                android:text="Nome"
+                android:textIsSelectable="false" />
 
         </LinearLayout>
-
-        <TextView
-            android:id="@+id/textView5"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textSize="24sp" />
 
         <TextView
             android:id="@+id/textView2"
@@ -63,12 +59,13 @@
             android:textSize="20sp" />
 
         <EditText
-            android:id="@+id/editTextTextPersonName"
+            android:id="@+id/et_qtd_sacos"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="number|textPersonName"
-            android:minHeight="48dp" />
+            android:minHeight="48dp"
+            android:text="0" />
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btFinalizarColheita"

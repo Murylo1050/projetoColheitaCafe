@@ -1,5 +1,7 @@
 package com.example.projetoorientacaoobjetos.OBJETOS;
 
+import java.util.ArrayList;
+
 public class Pessoa {
     private int contId = 0;
 
@@ -16,6 +18,8 @@ public class Pessoa {
     private int id;
     private int qtdSacos;
 
+    public void addSacos(int qtdSacos){ this.qtdSacos += qtdSacos;}
+
     public int getQtdSacos() {
         return qtdSacos;
     }
@@ -29,4 +33,6 @@ public class Pessoa {
     public Grupo getGrupo() { return grupo; }
 
     public String getNomePessoa() { return nome; }
+
+    public static int getIndexOfPessoa(ArrayList<Pessoa> pessoa, Pessoa person){ return pessoa.indexOf(person);}
 }
