@@ -37,11 +37,17 @@
                 android:layout_height="wrap_content"
                 android:minHeight="48dp" />
 
-            <Spinner
-                android:id="@+id/spinnerColheitaPessoa"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="1" />
+            <EditText
+                android:id="@+id/et_nome_pessoa_colheita"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:ems="10"
+                android:inputType="text"
+                android:minHeight="48dp"
+                android:onClick="editTextOnClick"
+                android:text="Nome"
+                android:textIsSelectable="false" />
 
         </LinearLayout>
 
@@ -53,12 +59,13 @@
             android:textSize="20sp" />
 
         <EditText
-            android:id="@+id/editTextTextPersonName"
+            android:id="@+id/et_qtd_sacos"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="number|textPersonName"
-            android:minHeight="48dp" />
+            android:minHeight="48dp"
+            android:text="0" />
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btFinalizarColheita"
