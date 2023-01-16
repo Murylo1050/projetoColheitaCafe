@@ -10,6 +10,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
@@ -23,6 +24,7 @@ public class Colheita extends AppCompatActivity {
     private Spinner listaGrupo;
     private EditText nomePessoa;
     private EditText qtdSacos;
+    private Button btAtualizarSacos;
     String[] equipes;
 
     private ArrayList<String> equipe = new ArrayList<>();
@@ -36,6 +38,7 @@ public class Colheita extends AppCompatActivity {
         listaGrupo = (Spinner) findViewById(R.id.spinnerColheitaGrupo);
         nomePessoa = (EditText)findViewById(R.id.et_nome_pessoa_colheita);
         qtdSacos = (EditText)findViewById(R.id.et_qtd_sacos);
+        btAtualizarSacos = (Button)findViewById(R.id.btFinalizarColheita);
 
 
         grupos.addAll(getGrupos());
@@ -68,9 +71,39 @@ public class Colheita extends AppCompatActivity {
             nomePessoa.setText("");
             }
         });
+
+
+        try {
+            btAtualizarSacos.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    int cont = 0;
+                    while (!(grupos.get(listaGrupo.getSelectedItemPosition()).getPessoasDaEquipe().get(cont).getNomePessoa().equalsIgnoreCase(nomePessoa.getText().toString()))) {
+                        cont++;
+                    }
+
+                    grupos.get(listaGrupo.getSelectedItemPosition()).getPessoasDaEquipe().get(cont).addSacos(Integer.parseInt(qtdSacos.getText().toString()));
+                    Toast.makeText(getApplicationContext(),"Sacos coletados com sucesso!",Toast.LENGTH_SHORT).show();
+                    nomePessoa.setText("");
+                    qtdSacos.setText("");
+
+                }
+            });
+        }catch (Exception e){
+            AlertDialog.Builder alert = new AlertDialog.Builder(getApplicationContext());
+            alert.setTitle("Atenção !");
+            alert.setMessage("A pessoa digitada não pertence a esse grupo ou não existe!");
+            alert.create().show();
+            nomePessoa.setText("");
+
+        }
     }
-    private int cont=0;
+
+
+
+/*
     public void AdicionaNovosSacos(View view) {
+        int cont = 0;
         try {
 
 
@@ -79,19 +112,21 @@ public class Colheita extends AppCompatActivity {
             }
 
             grupos.get(listaGrupo.getSelectedItemPosition()).getPessoasDaEquipe().get(cont).addSacos(Integer.parseInt(qtdSacos.getText().toString()));
-            Toast.makeText(getApplicationContext(),"Sacos coletados com sucesso!",Toast.LENGTH_SHORT);
+            Toast.makeText(getApplicationContext(),"Sacos coletados com sucesso!",Toast.LENGTH_SHORT).show();
             nomePessoa.setText("");
             qtdSacos.setText("");
         }catch (Exception e){
             AlertDialog.Builder alert = new AlertDialog.Builder(getApplicationContext());
             alert.setTitle("Atenção !");
             alert.setMessage("A pessoa digitada não pertence a esse grupo ou não existe!");
+            alert.create().show();
+            nomePessoa.setText("");
 
         }
 
 
     }
-
+*/
 
 
 }

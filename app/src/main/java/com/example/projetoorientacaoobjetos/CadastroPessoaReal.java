@@ -36,7 +36,7 @@ public class CadastroPessoaReal extends AppCompatActivity {
         setContentView(R.layout.activity_cadastro_pessoa_real);
         lista = (Spinner) findViewById(R.id.spinnerDoCadastraPessoa);
         nomePessoa = (EditText)findViewById(R.id.et_nome_pessoa);
-        idPessoa = (TextView)findViewById(R.id.tv_numero_identificacao);
+
 
 
         grupos.addAll(getGrupos());
