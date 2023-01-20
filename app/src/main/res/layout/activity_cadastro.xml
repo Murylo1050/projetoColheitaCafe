@@ -4,31 +4,39 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/background"
     tools:context=".Cadastro">
 
-    <LinearLayout
-        android:layout_width="350dp"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
+    <View
+        android:id="@+id/view2"
+        style="@style/ContainerComponents"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.4"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.498" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <Button
+        <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btCadastroPessoaReal"
-            android:layout_width="match_parent"
-            android:layout_height="93dp"
+            style="@style/Button"
             android:onClick="moveToCadastroPessoa"
-            android:text="Cadastrar pessoa" />
+            android:text="Cadastrar pessoa"
+            android:textColor="@color/white" />
 
-        <Button
+        <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btCadastroGrupo"
-            android:layout_width="match_parent"
-            android:layout_height="93dp"
+            style="@style/Button"
             android:onClick="moveToCadastroGrupo"
-            android:text="Cadastrar grupo" />
-
+            android:text="Cadastrar grupo"
+            android:textColor="@color/white" />
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
