@@ -36,3 +36,4 @@ public class Pessoa {
 
     public static int getIndexOfPessoa(ArrayList<Pessoa> pessoa, Pessoa person){ return pessoa.indexOf(person);}
 }
+//
